@@ -1,3 +1,4 @@
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 
 // third party
@@ -6,7 +7,8 @@ import { Provider } from 'react-redux';
 
 // project imports
 import * as serviceWorker from 'serviceWorker';
-import App from 'App';
+// import App from 'App';
+import App from './App';
 import { store } from 'store';
 
 // style + assets

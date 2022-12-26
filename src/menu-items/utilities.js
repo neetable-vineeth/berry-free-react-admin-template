@@ -61,6 +61,14 @@ const utilities = {
                     breadcrumbs: false
                 }
             ]
+        },
+        {
+            id: 'util-shadow',
+            title: 'Shadow',
+            type: 'item',
+            url: '/utils/util-shadow',
+            icon: icons.IconShadow,
+            breadcrumbs: false
         }
     ]
 };

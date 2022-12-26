@@ -3,6 +3,7 @@ import { lazy } from 'react';
 // project imports
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
+import { Users } from 'views/pages/sections/users';
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')));
@@ -13,6 +14,13 @@ const UtilsColor = Loadable(lazy(() => import('views/utilities/Color')));
 const UtilsShadow = Loadable(lazy(() => import('views/utilities/Shadow')));
 const UtilsMaterialIcons = Loadable(lazy(() => import('views/utilities/MaterialIcons')));
 const UtilsTablerIcons = Loadable(lazy(() => import('views/utilities/TablerIcons')));
+const ActivityFeed = Loadable(lazy(() => import('views/pages/sections/activityFeed')));
+const SchoolManagement = Loadable(lazy(() => import('views/pages/sections/schools')));
+// const Users = Loadable(lazy(() => import('views/pages/sections/users')));
+const ChallengeManagement = Loadable(lazy(() => import('views/pages/sections/chellangeManagement')));
+const PointsManagement = Loadable(lazy(() => import('views/pages/sections/pointsManagement')));
+const Shop = Loadable(lazy(() => import('views/pages/sections/scrappyShop')));
+const Reviews = Loadable(lazy(() => import('views/pages/sections/reviews')));
 
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('views/sample-page')));
@@ -28,62 +36,42 @@ const MainRoutes = {
             element: <DashboardDefault />
         },
         {
-            path: 'dashboard',
+            path: '/activity-feed',
+            element: <ActivityFeed />
+        },
+
+        {
+            path: '/schools',
+            element: <SchoolManagement />
+        },
+        {
+            path: '/users',
+            element: <Users />
+        },
+        {
+            path: '/challenge-management',
             children: [
                 {
-                    path: 'default',
-                    element: <DashboardDefault />
+                    path: 'campaigns',
+                    element: <ChallengeManagement />
+                },
+                {
+                    path: 'challenges',
+                    element: <ChallengeManagement />
                 }
             ]
         },
         {
-            path: 'utils',
-            children: [
-                {
-                    path: 'util-typography',
-                    element: <UtilsTypography />
-                }
-            ]
+            path: '/points',
+            element: <PointsManagement />
         },
         {
-            path: 'utils',
-            children: [
-                {
-                    path: 'util-color',
-                    element: <UtilsColor />
-                }
-            ]
+            path: '/shop',
+            element: <Shop />
         },
         {
-            path: 'utils',
-            children: [
-                {
-                    path: 'util-shadow',
-                    element: <UtilsShadow />
-                }
-            ]
-        },
-        {
-            path: 'icons',
-            children: [
-                {
-                    path: 'tabler-icons',
-                    element: <UtilsTablerIcons />
-                }
-            ]
-        },
-        {
-            path: 'icons',
-            children: [
-                {
-                    path: 'material-icons',
-                    element: <UtilsMaterialIcons />
-                }
-            ]
-        },
-        {
-            path: 'sample-page',
-            element: <SamplePage />
+            path: '/reviews',
+            element: <Reviews />
         }
     ]
 };
